@@ -82,7 +82,7 @@ namespace ChutzpahToCobertura
                         {
                             Name = jsonMember.Value.Value<string>(JsonMemberNameFilePath),
                             Coverage = jsonMember.Value.Value<double>(JsonMemberNameCoveragePercentage),
-                            Lines = jsonMember.Value.Value<JArray>(JsonMemberNameLineExecutionCounts).Values<byte?>()
+                            Lines = jsonMember.Value.Value<JArray>(JsonMemberNameLineExecutionCounts).Values<ushort?>()
                         };
                     }
                 }
@@ -173,7 +173,7 @@ namespace ChutzpahToCobertura
         private sealed class ChutzpahData
         {
             public string Name { get; set; }
-            public IEnumerable<byte?> Lines { get; set; }
+            public IEnumerable<ushort?> Lines { get; set; }
             public double Coverage { get; set; }
         }
         #endregion
